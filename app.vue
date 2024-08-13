@@ -3,12 +3,13 @@
     <NuxtRouteAnnouncer />
     <HeaderComponent />
     <ArticlesList />
+    <FooterComponent/>
   </div>
 </template>
 <script lang="ts">
 import HeaderComponent from './components/HeaderComponent.vue'
 import ArticlesList from './components/ArticlesList.vue';
-
+import FooterComponent from './components/FooterComponent.vue';
 </script>
 
 <style lang="less">

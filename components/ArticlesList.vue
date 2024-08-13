@@ -2,9 +2,10 @@
     <section class="articles container container_inner">
         <div v-if="selectedArticleId">
             <ArticleDetail :articleId="selectedArticleId" />
-            <button @click="resetSelectedArticle">Вернуться к списку статей</button>
+            <span class="return-btn" @click="resetSelectedArticle">Вернуться к списку статей</span>
         </div>
         <div v-else>
+            <h1 class="main-headline">Articles</h1>
             <ul class="article-list">
                 <li v-for="article in paginatedArticles" :key="article.id" @click="getArticle(article.id)"
                     class="article-list__item">
@@ -19,7 +20,8 @@
                 </li>
             </ul>
             <ul class="pagination">
-                <li @click="setCurrentPage(pageNumber)" class="pagination__item" :class="{ pagination__item_active: pageNumber === currentPage }"
+                <li @click="setCurrentPage(pageNumber)" class="pagination__item"
+                    :class="{ pagination__item_active: pageNumber === currentPage }"
                     v-for="pageNumber in Math.min(pageCount, 5)" :key="pageNumber">
                     {{ pageNumber }}
                 </li>
@@ -108,6 +110,13 @@ export default defineComponent({
 })
 </script>
 <style scoped lang="less">
+.main-headline {
+    color: #101010;
+    font-size: 84px;
+    font-weight: 400;
+    line-height: 84px;
+}
+
 .article {
     display: flex;
     flex-direction: column;
@@ -194,6 +203,25 @@ export default defineComponent({
             background-color: #101010;
             color: #fff;
         }
+    }
+}
+
+.return-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;
+    border-radius: 12px;
+    background-color: #e2beff;
+    color: #101010;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 8px;
+    cursor: pointer;
+    width: max-content;
+    max-width: 100%;
+    &:hover{
+        opacity: 0.8;
     }
 }
 </style>
