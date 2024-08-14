@@ -3,11 +3,12 @@
     <NuxtRouteAnnouncer />
     <HeaderComponent />
     <ArticlesList />
-    <FooterComponent/>
+    <FooterComponent />
   </div>
 </template>
-<script lang="ts">
-import HeaderComponent from './components/HeaderComponent.vue'
+
+<script lang="ts" setup>
+import HeaderComponent from './components/HeaderComponent.vue';
 import ArticlesList from './components/ArticlesList.vue';
 import FooterComponent from './components/FooterComponent.vue';
 </script>
@@ -18,7 +19,7 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 
-*{
+* {
   box-sizing: border-box;
   font-family: 'PT Sans', Helvetica, sans-serif;
   transition: all 0.3s;
@@ -200,27 +201,32 @@ template {
   display: none;
 }
 
-.container{
+.container {
   width: 1440px;
   max-width: 100%;
   padding: 0 40px;
   margin: 0 auto;
-  &_inner{
+
+  &_inner {
     padding: 0 80px;
   }
-  &.header{
+
+  &.header {
     padding: 35px 40px;
   }
 }
-@media(max-width:768px){
-  .container{
+
+@media(max-width:768px) {
+  .container {
     padding: 0 12px;
-    &_inner{
+
+    &_inner {
       padding: 0 24px;
     }
-    &.header{
-    padding: 15px 24px;
-  }
+
+    &.header {
+      padding: 15px 24px;
+    }
   }
 }
 </style>
