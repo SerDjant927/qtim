@@ -144,7 +144,7 @@ export default {
         align-items: center;
         justify-content: center;
         text-decoration: none;
-        padding: 122px 122px 40px;
+        padding: 122px 122px 12px;
         position: relative;
         z-index: 2;
 
@@ -183,6 +183,46 @@ export default {
         font-weight: 400;
         line-height: 19px;
         letter-spacing: 0.01em;
+    }
+}
+
+@media(max-width:1120px) {
+    .footer-bottom {
+        &__btn {
+            height: 220px;
+            width: 220px;
+            padding: 0;
+            position: relative;
+            bottom: -70px;
+            &::before {
+                height: 220px;
+                width: 220px;
+            }
+        }
+    }
+}
+@media(max-width:860px){
+    .footer-top{
+        &__main-text{
+            font-size: 3em;
+            line-height: 1.5;
+        }
+    }
+    .footer-bottom{
+        flex-direction: column;
+        &__btn{
+            bottom: unset;
+            order: 3;
+        };
+    }
+    .footer-links{
+        padding: 12px 0;
+    }
+}
+@media(max-width:620px){
+    .footer-top{
+        flex-direction: column;
+        row-gap: 24px;
     }
 }
 </style>

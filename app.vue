@@ -212,4 +212,15 @@ template {
     padding: 35px 40px;
   }
 }
+@media(max-width:768px){
+  .container{
+    padding: 0 12px;
+    &_inner{
+      padding: 0 24px;
+    }
+    &.header{
+    padding: 15px 24px;
+  }
+  }
+}
 </style>

@@ -69,4 +69,13 @@ export default defineComponent({
     aspect-ratio: 16/9;
     background-color: rgb(243, 243, 243);
 }
+@media(max-width:720px){
+    .main-headline{
+        font-size: 15vw;
+    }
+    .article-text{
+        font-size: 5vw;
+        line-height: 1.5;
+    }
+}
 </style>
